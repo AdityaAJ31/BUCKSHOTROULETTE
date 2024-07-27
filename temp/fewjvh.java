@@ -1,7 +1,8 @@
-package dd;
+package temp;
 
 class fewjvh{
     public static void main(String ar[]){
-        System.out.println("sd");
+        String s = "sdfghj";
+        System.out.println(s.charAt(2));
     }
 }
