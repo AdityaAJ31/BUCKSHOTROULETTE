@@ -1,13 +1,11 @@
-package dev;
 import java.util.Random;
 
 public class Game {
-    //Function to take breaks, enter milliseconds for parameters 
-    public static void wait(int i){
+    //Function to halt the excution of the code
+    public static void wait(int millisecond){
         try {
-            Thread.sleep(i);
+            Thread.sleep(millisecond);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -17,13 +15,13 @@ public class Game {
         System.out.flush();
     }
     //steady printing of texts
-    public static void print_text(String str){
+    public static void print_text(String str,int milsec){
         for (int i = 0; i<str.length();i++) {
             System.out.print(str.charAt(i));
             wait(70);
         }
         System.out.println();
-        wait(2000);
+        wait(milsec);
         clrscr();
     }
     public boolean[] new_ammo(int bullet_count){
@@ -45,11 +43,17 @@ public class Game {
         return magzine;
     }
     public static void main(String[] args) {
-        Game obj = new Game();
-        for (boolean i : obj.new_ammo(8)) {
-            
-            System.out.print(i+" ");
-        }
-        System.out.println();
+        clrscr();
+        //game start and explaining rules to player
+        //Round one starts here
+        print_text("Welcome player...",2000);
+        print_text("We have been awaiting you...",2000);
+        print_text("but before we begin, \nwe must look at the rules of the GAME",2000);
+        print_text("here are the rules:"
+        +"\n1. You can either shoot yourself or the dealer"
+        +"\n2. If you shoot yourself with a blank round you get one more change"
+        +"\n3. New rules will be introduced as you further progress in the game"
+        +"\n3. If you lose all lives, you are dead, if you quit you are dead. Only way to survive is to win",10000);
+    
     }
 }
