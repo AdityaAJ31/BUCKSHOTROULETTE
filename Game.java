@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 //for suggling arrays
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
@@ -79,6 +78,7 @@ public class Game {
     public static void main(String[] args) {
         Player player_1 = new Player();
         Player player_2 = new Player();
+        Gun gun = new Gun();
         @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         clrscr();
@@ -95,5 +95,6 @@ public class Game {
         System.out.println("You ready??");
         sc.next();
         print_text("Doesn't matter, let's start", 2000);
+
     }
 }
